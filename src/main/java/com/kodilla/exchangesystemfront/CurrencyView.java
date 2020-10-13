@@ -1,7 +1,7 @@
 package com.kodilla.exchangesystemfront;
 
-import com.kodilla.exchangesystemfront.domain.Currency;
-import com.kodilla.exchangesystemfront.domain.CurrencyService;
+import com.kodilla.exchangesystemfront.domain.currency.Currency;
+import com.kodilla.exchangesystemfront.domain.currency.CurrencyService;
 import com.vaadin.flow.component.contextmenu.MenuItem;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.menubar.MenuBar;
@@ -10,12 +10,12 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouterLink;
 
 @Route
-public class MainView extends VerticalLayout {
+public class CurrencyView extends VerticalLayout {
 
     private CurrencyService currencyService = CurrencyService.getInstance();
     private Grid<Currency> grid = new Grid<>(Currency.class);
 
-    public MainView() {
+    public CurrencyView() {
         grid.setColumns("currencyName", "currencyCode", "currencyBid", "currencyAsk");
         prepareMenu();
         add(grid);
@@ -29,7 +29,7 @@ public class MainView extends VerticalLayout {
         MenuItem cryptoCurrencies = menuBar.addItem("Kryptowaluty");
         MenuItem transactions = menuBar.addItem("Twoje transakcje");
         MenuItem userAccount = menuBar.addItem("Konto");
-        currencies.addClickListener(e -> new RouterLink("Test", SecondView.class));
+        currencies.addClickListener(e -> new RouterLink("Test", CryptoCurrencyView.class));
         add(menuBar);
     }
 

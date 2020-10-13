@@ -1,8 +1,9 @@
-package com.kodilla.exchangesystemfront.domain;
+package com.kodilla.exchangesystemfront.domain.currency;
 
 import java.util.Objects;
 
 public class Currency {
+
     private String currencyName;
     private String currencyCode;
     private String currencyBid;
